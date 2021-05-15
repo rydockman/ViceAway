@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:sys="clr-namespace:System;assembly=mscorlib"
+    x:Class="FinalProject.Settings"
+    BackgroundColor="{StaticResource BackgroundColor}">
+    <ContentPage.Content>
+        <StackLayout Padding="0, 40, 0, 0" BackgroundColor="{StaticResource BackgroundColor}">
+            <Frame CornerRadius="10" HasShadow="True" BackgroundColor="{StaticResource BackgroundColor}">
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                    <StackLayout Orientation="Vertical">
+                        <Label Text="When did you stop your vice?" HorizontalTextAlignment="Start" TextColor="{StaticResource TextColor}"/>
+                    </StackLayout>
+                    <DatePicker x:Name="stopDatePicker" BackgroundColor="{StaticResource BackgroundColor}" HeightRequest="10" TextColor="{StaticResource AccentColor}" HorizontalOptions="Center" MaximumDate="{Binding Source={x:Static sys:DateTime.Now}}"/>
+                </StackLayout>
+            </Frame>
+            <Frame CornerRadius="10" HasShadow="True" BackgroundColor="{StaticResource BackgroundColor}">
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                    <Label Text="Current Vice" HorizontalTextAlignment="Start" TextColor="{StaticResource TextColor}" Padding="0, 5, 0, 0"/>
+                    <Picker x:Name="vicePicker" BackgroundColor="{StaticResource BackgroundColor}" TextColor="{StaticResource AccentColor}"/>
+                </StackLayout>
+            </Frame>
+            <Frame CornerRadius="10" HasShadow="True" BackgroundColor="{StaticResource BackgroundColor}">
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                    <Label Text="Cost per " HorizontalTextAlignment="Start" TextColor="{StaticResource TextColor}" Padding="0, 5, 0, 0"/>
+                    <Picker x:Name="timeFramePicker" BackgroundColor="{StaticResource BackgroundColor}" TextColor="{StaticResource AccentColor}"/>
+                    <Label x:Name="costLabel" Text="is $" HorizontalTextAlignment="Start" TextColor="{StaticResource TextColor}" Padding="0, 5, 0, 0"/>
+                    <Stepper x:Name="costStepper" Minimum="0" Increment="1" ValueChanged="costStepper_ValueChanged"/>
+                </StackLayout>
+            </Frame>
+            <Frame CornerRadius="10" HasShadow="True" BackgroundColor="{StaticResource BackgroundColor}">
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                    <Label Text="Currency" HorizontalTextAlignment="Start" TextColor="{StaticResource TextColor}" Padding="0, 5, 0, 0"/>
+                    <Entry x:Name="currencyEntry" TextColor="{StaticResource AccentColor}" BackgroundColor="{StaticResource BackgroundColor}" />
+                </StackLayout>
+            </Frame>
+            <Button x:Name="doneBtn" Text="Save" Clicked="OnClicked" TextColor="{StaticResource AccentColor}" FontSize="20"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:FinalProject;assembly=FinalProject"
+    xmlns:skia="clr-namespace:SkiaSharp.Views.Forms;assembly=SkiaSharp.Views.Forms"
+    x:Class="FinalProject.Cravings"
+    BackgroundColor="{StaticResource BackgroundColor}">
+    <ContentPage.Content>
+        <StackLayout Padding="0,40,0,0" BackgroundColor="{StaticResource BackgroundColor}">
+            <Frame HasShadow="True" BackgroundColor="{StaticResource BackgroundColor}">
+                <skia:SKCanvasView x:Name="pieChart" PaintSurface="OnCanvasViewPaintSurface" 
+                                   HeightRequest="240" WidthRequest="300"/>
+            </Frame>
+            <Frame HasShadow="True" BackgroundColor="{StaticResource BackgroundColor}">
+                <StackLayout Orientation="Vertical">
+                    <Label Text="Cravings" TextColor="{StaticResource TextColor}" HorizontalOptions="CenterAndExpand"/>
+                    <Label TextColor="{StaticResource TextColor}" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center" Text="If you are feeling the urge to go back to your vice, choose the situation that you were in when you got the urge. The statistics will help you identify the situations where you are most often at risk."/>
+                    <BoxView HorizontalOptions="FillAndExpand" HeightRequest="1" Color="{StaticResource AccentColor}" Opacity=".4" Margin="0, 0, 0, -5"/>
+                    <ListView x:Name="cravingsListView" BackgroundColor="{StaticResource BackgroundColor}" ItemTapped="cravingsListView_ItemTapped" SeparatorColor="{StaticResource AccentColor}">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <StackLayout Orientation="Horizontal" Margin="0, 5, 0, -5">
+                                        <Frame BackgroundColor="{Binding Hex}" WidthRequest="35" Padding="0, 5, 0, 0" HorizontalOptions="StartAndExpand" Margin="0, 0, 0, 10">
+                                            <Label Text="{Binding Count}" TextColor="{StaticResource TextColor}" HorizontalTextAlignment="Center"/>
+                                        </Frame>
+                                        <Label Text="{Binding DisplayName}" TextColor="{StaticResource TextColor}" HorizontalOptions="CenterAndExpand" Padding="0, 2, 0, 0"/>
+                                        <Label Text="+/-" TextColor="{StaticResource TextColor}" HorizontalOptions="EndAndExpand" Padding="0, 5, 0, 0"/>
+                                    </StackLayout>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </StackLayout>
+            </Frame>
+        </StackLayout>
+
+    </ContentPage.Content>
+</ContentPage>

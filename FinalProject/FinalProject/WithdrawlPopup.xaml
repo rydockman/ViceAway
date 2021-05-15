@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="FinalProject.WithdrawlPopup"
+    BackgroundColor="{StaticResource BackgroundColor}">
+    <ContentPage.Content>
+        <StackLayout Padding="0, 40, 0, 0">
+            <Frame CornerRadius="10" HasShadow="True" BackgroundColor="{StaticResource BackgroundColor}">
+                <Label Text="Here is where you can withdrawl money that you have saved up from quitting your vice.
+                       Use this money to reward yourself or save up towards a goal" TextColor="{StaticResource TextColor}" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+            </Frame>
+
+            <Frame CornerRadius="10" HasShadow="True" BackgroundColor="{StaticResource BackgroundColor}">
+                <StackLayout HorizontalOptions="CenterAndExpand">
+                    <Label x:Name="amountLabel" Text="$0" HorizontalOptions="Center" TextColor="{StaticResource TextColor}"/>
+                    <Button x:Name="amountBtn" Text="Amount to withdrawl" Clicked="OptionClicked" TextColor="{StaticResource AccentColor}" FontSize="20"/>
+                    </StackLayout>
+            </Frame>
+            <Frame CornerRadius="10" HasShadow="True" BackgroundColor="{StaticResource BackgroundColor}">
+                <StackLayout HorizontalOptions="CenterAndExpand">
+                    <Label x:Name="reasonLabel" Text="..." HorizontalOptions="Center" TextColor="{StaticResource TextColor}"/>
+                    <Button x:Name="reasonBtn" Text="Reason to withdrawl" Clicked="OptionClicked" TextColor="{StaticResource AccentColor}" FontSize="20"/>
+                </StackLayout>
+            </Frame>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" BackgroundColor="{StaticResource BackgroundColor}">
+                <Button x:Name="doneBtn" Text="Done" Clicked="SaveCancelClicked" TextColor="{StaticResource AccentColor}" BorderColor="{StaticResource AccentColor}" BorderWidth="3" FontSize="20" Margin="0, 0, 10, 0" Padding="10, 0, 10, 0"/>
+                <Button x:Name="cancelBtn" Text="Cancel" Clicked="SaveCancelClicked" TextColor="{StaticResource AccentColor}" BorderColor="{StaticResource AccentColor}" BorderWidth="3" FontSize="20" Margin="10, 0, 0, 0" Padding="10, 0, 10, 0"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

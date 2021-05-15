@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="FinalProject.Bank"
+    xmlns:local="clr-namespace:FinalProject;assembly=FinalProject"
+    BackgroundColor="{StaticResource BackgroundColor}">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <local:DateTimeToStringConverter x:Key="dateTimeConvert"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" BackgroundColor="{StaticResource BackgroundColor}">
+            <Frame BackgroundColor="{StaticResource AccentColor}" Padding="24" CornerRadius="0">
+            <Label x:Name="bankLabel" Text="$0" Padding="0, 40, 0, 0" HorizontalTextAlignment="Center" TextColor="{StaticResource TextColor}" FontSize="36"/>
+            </Frame>
+            <Button Text="Withdrawl" Clicked="WithdrawlClicked" TextColor="{StaticResource AccentColor}" BorderColor="{StaticResource AccentColor}" BorderWidth="3" FontSize="20" Margin="60, 30, 60, 30"/>
+            <BoxView HorizontalOptions="FillAndExpand" HeightRequest="1" Color="{StaticResource AccentColor}" Opacity=".4" Margin="20, 0, 15, -15"/>
+            <StackLayout Padding="0,0,15,0">
+                <ListView x:Name="withdrawlList" BackgroundColor="{StaticResource BackgroundColor}" SeparatorColor="{StaticResource AccentColor}" ItemTapped="withdrawlList_ItemTapped" Margin="0, 10, 0, 0">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Margin="0, 10, 0, 0">
+                                    <Label Text="{Binding DatePerformed, Converter={StaticResource dateTimeConvert}}" TextColor="{StaticResource TextColor}"/>
+                                    <Label Text="{Binding Amount, StringFormat='${0:F0}'}" TextColor="{StaticResource AccentColor}"/>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

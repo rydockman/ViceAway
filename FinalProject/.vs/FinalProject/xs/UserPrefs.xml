@@ -1,0 +1,29 @@
+﻿<Properties StartupConfiguration="{351DA22D-89C8-49AC-AE3B-CA1985363533}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="FinalProject/FirstLaunch.xaml">
+    <Files>
+      <File FileName="FinalProject/FirstLaunch.xaml" Line="12" Column="53" />
+      <File FileName="FinalProject/Bank.xaml" />
+      <File FileName="FinalProject/WithdrawlPopup.xaml.cs" />
+      <File FileName="FinalProject/FirstLaunch.xaml.cs" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="FinalProject" expanded="True">
+            <Node name="FinalProject" expanded="True">
+              <Node name="FirstLaunch.xaml" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.FinalProject.Android PreferredExecutionTarget="Android.pixel_2_pie_9_0_-_api_28" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.FinalProject.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.8CBD3A8F-FC15-4C1F-B740-39170EEFF0EE" />
+</Properties>
